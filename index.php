@@ -11,8 +11,9 @@ include_once 'header.php';
             <h3>HOOD</h3>
             <p>For all who want to go to the second level. It combines the best of both worlds and is the middle thing you can’t go wrong with</p>
         </div>
-        <form action="" name="childhood">
-            <input type="number" name="amount">
+        <form class="buyform" action="" name="childhood">
+            <input type="number" value="1" name="amount">
+            <h1>0.0012 BTC</h1>
             <button type="submit" name="buy">BUY NOW</button>
         </form>
     </div>
@@ -22,8 +23,9 @@ include_once 'header.php';
             <h3>SKULLS</h3>
             <p>For all who want to go to the second level. It combines the best of both worlds and is the middle thing you can’t go wrong with</p>
         </div>
-        <form action="" name="silverskulls">
-            <input type="number" name="amount">
+        <form class="buyform" action="" name="childhood">
+            <input type="number" value="1" name="amount">
+            <h1>0.0024 BTC</h1>
             <button type="submit" name="buy">BUY NOW</button>
         </form>
     </div>
@@ -33,8 +35,9 @@ include_once 'header.php';
             <h3>PACK</h3>
             <p>For all who want to go to the second level. It combines the best of both worlds and is the middle thing you can’t go wrong with</p>
         </div>
-        <form action="" name="candypack">
-            <input type="number" name="amount">
+        <form class="buyform" action="" name="childhood">
+            <input type="number" value="1" name="amount">
+            <h1>0.0120 BTC</h1>
             <button type="submit" name="buy">BUY NOW</button>
         </form>
     </div>

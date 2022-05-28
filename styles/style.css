@@ -1,4 +1,4 @@
-/*@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Work+Sans:wght@900&display=swap');
 
@@ -55,6 +55,7 @@ nav ul li a:hover {
     right: 2%;
     top: 38%;
 }
+
 .icons p {
     position: relative;
     top: 5px;
@@ -63,19 +64,24 @@ nav ul li a:hover {
     font-family: 'Inter', sans-serif;
     font-size: 20px;
 }
-a{
+
+a {
     text-decoration: none;
 }
+
 .container {
     position: relative;
     background: #aad5f6;
 }
+
 .slide-1 {
     background: url('../images/childhood.jpg');
 }
+
 .slide-2 {
     background: url('../images/silverskulls.jpg');
 }
+
 .slide-3 {
     background: url('../images/candypack.jpg');
 }
@@ -86,15 +92,8 @@ a{
     background-size: cover;
     background-position: center;
     position: relative;
-    overflow-x: hidden;
 }
-.caption {
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    padding: 50px 100px;
-}
+
 .caption h3 {
     color: #fff;
     text-align: left;
@@ -103,6 +102,7 @@ a{
     line-height: 100px;
     padding: 18px;
 }
+
 .caption p {
     max-width: 700px;
     width: 90%;
@@ -114,6 +114,7 @@ a{
     font-family: 'Inter', sans-serif;
     font-size: 30px;
 }
+
 .arrow {
     position: absolute;
     top: 50%;
@@ -124,18 +125,23 @@ a{
     border-radius: 50%;
     transform: background 500ms;
 }
+
 .arrow img {
     width: 50px;
 }
+
 .arrow:hover {
     background: rgba(0, 0, 0, .4);
 }
+
 .l {
     left: 2%;
 }
+
 .r {
     right: 2%;
 }
+
 .icons img {
     padding: 0px 7px;
     height: 33px;
@@ -162,5 +168,121 @@ a{
     .nav-logo {
         width: 200px;
         margin-top: -15px;
+    }
+}
+
+.buyform {
+    position: absolute;
+    right: 6%;
+    display: flex;
+    flex-direction: column;
+    width: 510px;
+    height: 460px;
+    background: rgba(60, 60, 60, 0.82);
+    border-radius: 27px;
+    top: 50%;
+    transform: translate(0, -50%);
+    align-items: center;
+}
+
+.buyform h1 {
+    font-family: 'Work Sans', sans-serif;
+    letter-spacing: -0.04em;
+    background: linear-gradient(135deg, #FDEB71 0%, #F8D800 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-fill-color: transparent;
+    font-weight: 800;
+    font-size: 81px;
+    margin-top: 70px;
+}
+
+.buyform input {
+    background: #FFFFFF;
+    border-radius: 23px;
+    border: none;
+    width: 260px;
+    height: 90px;
+    font-size: 60px;
+    font-family: 'Work Sans';
+    display: flex;
+    text-align: center;
+    outline: none;
+    margin-top: 70px;
+}
+
+.buyform button {
+    color: white;
+    background: none;
+    border: none;
+    font-size: 48px;
+    font-family: 'Work Sans';
+    margin-top: 10px;
+    cursor: pointer;
+    transition: .2s;
+}
+
+.caption {
+    position: absolute;
+    top: 50%;
+    transform: translate(0, -50%);
+    left: 6%;
+}
+
+@media(max-width:1400px) {
+    .caption {
+        left: 50%;
+        transform: translate(-50%);
+        top: 20%;
+    }
+
+    .buyform {
+        left: 50%;
+        transform: translate(-50%);
+        top: 80%;
+        margin-bottom: 200px;
+    }
+
+    .caption h3 {
+        text-align: center;
+    }
+
+    body {
+        margin-bottom: 100px;
+    }
+
+    .caption p {
+        text-align: center;
+    }
+}
+
+@media(max-width:900px) {
+    .caption {
+        top: 12%;
+    }
+
+    .caption h3 {
+        font-size: 100px;
+        line-height: 40px;
+    }
+
+    .caption p {
+        font-size: 25px;
+        text-align: center;
+    }
+
+    .buyform {
+        top: 60%;
+        width: 400px;
+        height: 400px;
+    }
+
+    .buyform h1 {
+        font-size: 60px;
+    }
+
+    .buyform button {
+        font-size: 35px;
     }
 }
