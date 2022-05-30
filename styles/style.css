@@ -68,7 +68,9 @@ nav ul li a:hover {
 a {
     text-decoration: none;
 }
-
+.buy {
+    color: white;
+}
 .container {
     position: relative;
     background: #aad5f6;

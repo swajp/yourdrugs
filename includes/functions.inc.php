@@ -167,11 +167,12 @@ function deleteUser($conn){
 
     }
 }
-function allProducst($conn){
+function allProducst($conn)
+{
     $sql = "SELECT * FROM products";
 
-    if($result = mysqli_query($conn, $sql)){
-        if(mysqli_num_rows($result) > 0){
+    if ($result = mysqli_query($conn, $sql)) {
+        if (mysqli_num_rows($result) > 0) {
             echo "<h2>Products</h2>";
             echo "<table>";
             echo "<tr>";
@@ -180,30 +181,24 @@ function allProducst($conn){
             echo "<th>Price</th>";
             echo "<th>Is Available</th>";
             echo "</tr>";
-            while($row = mysqli_fetch_array($result)){
+            while ($row = mysqli_fetch_array($result)) {
                 echo "<tr>";
                 echo "<td>" . $row['id'] . "</td>";
                 echo "<td>" . $row['productsName'] . "</td>";
                 echo "<td>" . $row['productsPrice'] . "</td>";
-                if ($row['productAvailable'] == 1)
-                {
+                if ($row['productAvailable'] == 1) {
                     echo "<td> Available  </td>";
-                } else{
+                } else {
                     echo "<td> Not Available  </td>";
                 }
-                echo "<td> <a href=adminpanel.php?idEdit=" . $row['id'] . editProduct($conn) .  ">Edit<a/></td>";
                 echo "</tr>";
             }
             echo "</table>";
             mysqli_free_result($result);
-        } else{
+        } else {
             echo "No rows in database.";
         }
-    } else{
+    } else {
         echo "ERROR: $sql. " . mysqli_error($conn);
-    }
-}
-function editProduct($conn){
-    if(isset($_GET['idEdit'])){
     }
 }

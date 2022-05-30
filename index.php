@@ -1,6 +1,7 @@
 <?php
 include_once 'header.php';
 ?>
+
 <div class="container">
     <div class="arrow l" onclick="prev()">
         <img src="images/l.png" alt="l">
@@ -12,9 +13,13 @@ include_once 'header.php';
             <p>For all who want to go to the second level. It combines the best of both worlds and is the middle thing you can’t go wrong with</p>
         </div>
         <form class="buyform" action="" name="childhood">
-            <input type="number" value="1" name="amount">
+            <input type="number" min="1" value="1" name="amount">
             <h1>0.0012 BTC</h1>
-            <button type="submit" name="buy">BUY NOW</button>
+            <?php if (isset($_SESSION['userid'])){
+                echo "<button type='submit' name='buy'>BUY NOW</button>";
+            } else{
+                echo "<button type='submit' name='buy'><a class='buy' href='login.php'>BUY NOW</a></button>";
+            }?>
         </form>
     </div>
     <div class="slide slide-2">
@@ -24,9 +29,13 @@ include_once 'header.php';
             <p>For all who want to go to the second level. It combines the best of both worlds and is the middle thing you can’t go wrong with</p>
         </div>
         <form class="buyform" action="" name="childhood">
-            <input type="number" value="1" name="amount">
+            <input type="number" min="1" value="1" name="amount">
             <h1>0.0024 BTC</h1>
-            <button type="submit" name="buy">BUY NOW</button>
+            <?php if (isset($_SESSION['userid'])){
+                echo "<button type='submit' name='buy'>BUY NOW</button>";
+            } else{
+                echo "<button type='submit'name='buy'><a class='buy' href='login.php'>BUY NOW</a></button>";
+            }?>
         </form>
     </div>
     <div class="slide slide-3">
@@ -36,9 +45,13 @@ include_once 'header.php';
             <p>For all who want to go to the second level. It combines the best of both worlds and is the middle thing you can’t go wrong with</p>
         </div>
         <form class="buyform" action="" name="childhood">
-            <input type="number" value="1" name="amount">
+            <input type="number" min="1" value="1" name="amount">
             <h1>0.0120 BTC</h1>
-            <button type="submit" name="buy">BUY NOW</button>
+            <?php if (isset($_SESSION['userid'])){
+                echo "<button type='submit' name='buy'>BUY NOW</button>";
+            } else{
+                echo "<button type='submit' name='buy'><a class='buy' href='login.php'>BUY NOW</a></button>";
+            }?>
         </form>
     </div>
     <div class="arrow r" onclick="next()">

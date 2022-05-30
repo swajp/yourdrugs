@@ -5,4 +5,3 @@
 
     allUsers($conn);
     allProducst($conn);
-    editProduct($conn);
