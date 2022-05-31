@@ -1,7 +1,13 @@
 <?php
 include_once 'header.php';
 ?>
+<script>
+        function changePrice(){
+            let price =childhood.amount.value;
+            document.getElementById("currentPrice").innerHTML=parseFloat(price) * 0.0012;
 
+        }
+    </script>
 <div class="container">
     <div class="arrow l" onclick="prev()">
         <img src="images/l.png" alt="l">
@@ -13,8 +19,8 @@ include_once 'header.php';
             <p>For all who want to go to the second level. It combines the best of both worlds and is the middle thing you can’t go wrong with</p>
         </div>
         <form class="buyform" action="" name="childhood">
-            <input type="number" min="1" value="1" name="amount">
-            <h1>0.0012 BTC</h1>
+            <input type="number" min="1" value="1" onchange="changePrice()" name="amount">
+            <div id="currentPrice">><h1>0.0012 BTC</h1></div>
             <?php if (isset($_SESSION['userid'])){
                 echo "<button type='submit' name='buy'>BUY NOW</button>";
             } else{
