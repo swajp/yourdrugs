@@ -119,86 +119,17 @@ function loginUser($conn, $email, $pwd){
         }
     }
 }
-function allUsers($conn){
-    $sql = "SELECT * FROM users";
-
-    if($result = mysqli_query($conn, $sql)){
-        if(mysqli_num_rows($result) > 0){
-            echo "<h2>Users</h2>";
-            echo "<table>";
-            echo "<tr>";
-            echo "<th>ID</th>";
-            echo "<th>Name</th>";
-            echo "<th>Email</th>";
-            echo "<th>Role</th>";
-            echo "</tr>";
-            while($row = mysqli_fetch_array($result)){
-                echo "<tr>";
-                echo "<td>" . $row['usersId'] . "</td>";
-                echo "<td>" . $row['usersName'] . "</td>";
-                echo "<td>" . $row['usersEmail'] . "</td>";
-                echo "<td>" . $row['usersRole'] . "</td>";
-                if ($row['usersName'] != "admin"){
-                    echo "<td> <a href=adminpanel.php?idDelete=" . $row['usersId'] . deleteUser($conn) . ">Delete user<a/></td>";
-                }
-                echo "</tr>";
-            }
-            echo "</table>";
-            mysqli_free_result($result);
-        } else{
-            echo "No rows in database.";
-        }
-    } else{
-        echo "Error:  $sql. " . mysqli_error($conn);
-    }
-}
-function deleteUser($conn){
-    if (isset($_GET['idDelete'])){
-        $sql = "DELETE FROM users WHERE usersId = " . $_GET['idDelete'];
-        echo $sql;
-
-        if (mysqli_query($conn, $sql)) {
-            echo "Deleted successfully";
-            header("location: ../adminpanel.php");
-            exit();
-        } else {
-            echo "Error: " . mysqli_error($conn);
-        }
-
-    }
-}
-function allProducst($conn)
-{
-    $sql = "SELECT * FROM products";
-
-    if ($result = mysqli_query($conn, $sql)) {
-        if (mysqli_num_rows($result) > 0) {
-            echo "<h2>Products</h2>";
-            echo "<table>";
-            echo "<tr>";
-            echo "<th>ID</th>";
-            echo "<th>Name</th>";
-            echo "<th>Price</th>";
-            echo "<th>Is Available</th>";
-            echo "</tr>";
-            while ($row = mysqli_fetch_array($result)) {
-                echo "<tr>";
-                echo "<td>" . $row['id'] . "</td>";
-                echo "<td>" . $row['productsName'] . "</td>";
-                echo "<td>" . $row['productsPrice'] . "</td>";
-                if ($row['productAvailable'] == 1) {
-                    echo "<td> Available  </td>";
-                } else {
-                    echo "<td> Not Available  </td>";
-                }
-                echo "</tr>";
-            }
-            echo "</table>";
-            mysqli_free_result($result);
-        } else {
-            echo "No rows in database.";
-        }
+function changeUser($conn, $email, $username, $userid){
+    session_start();
+    $sql = "UPDATE users SET usersEmail = " . "'$email'" .", usersName = " . "'$username'" . " WHERE usersId =  " . $userid;
+    echo $sql;
+    if (mysqli_query($conn, $sql)) {
+        echo "Edited successfully";
+        $_SESSION["name"] = $username;
+        $_SESSION["email"] = $email;
+        header("location: ../profile.php?errornone");
+        exit();
     } else {
-        echo "ERROR: $sql. " . mysqli_error($conn);
+        echo "Error: " . mysqli_error($conn);
     }
 }
