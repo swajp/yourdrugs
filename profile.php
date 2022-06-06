@@ -21,6 +21,22 @@ include_once 'header.php';
                 </div>
                 <div class="mt-5 text-center"><button class="btn btn-primary profile-button" name="submit" type="submit">Save Profile</button></div>
                 </form>
+                
+                         <div class="d-flex justify-content-between align-items-center mb-3">
+                    <h4 class="text-right">Password Change</h4>
+                </div>
+                <form action="includes/changepassword.inc.php" method="post">
+                <div class="row mt-3">
+                    <div class="col-md-12"><label class="labels">Current password</label><input type="text" name="email" contenteditable="false" class="form-control" placeholder="enter current password"></div>
+                    <div class="col-md-12"><label class="labels">New password</label><input type="text" name="username" class="form-control" placeholder="enter new password"></div>
+                    <div class="col-md-12"><label class="labels">New password again </label><input type="text" name="username" class="form-control" placeholder="enter new password" </div>
+                </div>
+                <div class="mt-3 text-center"><button class="btn btn-primary profile-button" name="submit" type="submit">Change password</button></div>
+                                <div class="d-flex justify-content-between align-items-center mb-3">             
+                </div>
+                </form>
+            </div>
+                
             </div>
         </div>
     </div>
