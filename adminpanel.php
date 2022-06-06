@@ -138,7 +138,7 @@ function changeRole($conn)
             }
         }
         if ($_GET['roleEdit'] == "admin"){
-            $sql = "UPDATE products SET productAvailable = " . '"users" ' . "WHERE usersId = " . $_GET['idEdit'];
+            $sql = "UPDATE users SET usersRole = " . '"user "' . "WHERE usersId = " . $_GET['idEdit'];
             if (mysqli_query($conn, $sql)) {
                 echo "Deleted successfully";
                 header("location: adminpanel.php");
