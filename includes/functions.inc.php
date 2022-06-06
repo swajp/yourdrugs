@@ -121,7 +121,7 @@ function loginUser($conn, $email, $pwd){
 }
 function changeUser($conn, $email, $username, $userid){
     session_start();
-    $sql = "UPDATE users SET usersEmail = " . "'$email'" .", usersName = " . "'$username'" . " WHERE usersId =  " . $userid;
+    $sql = "UPDATE users SET usersEmail = " . "'$email'" .", usersName = " . "'$username'" . " WHERE usersId =  " . $_SESSION["userid"];
     echo $sql;
     if (mysqli_query($conn, $sql)) {
         echo "Edited successfully";
